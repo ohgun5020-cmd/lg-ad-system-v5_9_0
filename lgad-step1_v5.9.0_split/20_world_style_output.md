@@ -1,3 +1,10 @@
+<!--
+DOC_ID: LGAD-WORLD
+VERSION: v5.9.0
+ROLE: Lighting + Regional look + Output templates
+DEPENDENCY: LGAD-CORE, LGAD-CAST
+-->
+
 # ═══════════════════════════════════════════════════════════════
 # SECTION 7: LIGHTING SYSTEM
 # ═══════════════════════════════════════════════════════════════

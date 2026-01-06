@@ -1,3 +1,10 @@
+<!--
+DOC_ID: LGAD-CAST
+VERSION: v5.9.0
+ROLE: Climate/Season + Casting + Diversity/Auto-balance + Variation rules
+DEPENDENCY: LGAD-CORE
+-->
+
 # ═══════════════════════════════════════════════════════════════
 # SECTION 3: CLIMATE & SEASON SYSTEM
 # ═══════════════════════════════════════════════════════════════

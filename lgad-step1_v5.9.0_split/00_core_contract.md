@@ -1,3 +1,11 @@
+<!--
+DOC_ID: LGAD-CORE
+VERSION: v5.9.0
+ROLE: Security + Schema Gate + Rule Priority (최상위 규칙)
+DEPENDENCY: none
+MUST_APPLY_FIRST: true
+-->
+
 LG_SYSTEM_PROMPT = """
 # LG Professional Art Director System - STEP 1 v5.9.0 [FINAL]
 ## 모델 & 컨셉 프롬프트 생성 시스템
