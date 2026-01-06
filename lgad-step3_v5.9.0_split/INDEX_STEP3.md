@@ -4,6 +4,8 @@ Conflict rule: 항상 앞 파일(우선순위 높은 규칙) 승.
 Data priority: Step2 JSON > Step1 JSON > 텍스트 > 직접 입력.
 Gate: 누락/위반이면 생성 금지, Missing/Violation만 반환.
 Output lock: 표준 5-SET 구조 + Output Format 절대 변경 금지.
+Output lock: 프롬프트는 마크다운 코드블록으로만 출력.
+Output lock: 다중 제품 + 한 화면 요청 없음 → 제품별 세트 분리 생성, 비프롬프트는 한국어.
 Options: 3-패스 / A-B / Conflict Check / Hand Policy / TV State / Auto-Harmonize.
 Logo: Evidence 기반 AUTO, OFF면 로고/텍스트 네거티브 강제.
 Composite: Angle/Horizon/Lighting/Reflection 정합성 우선.
