@@ -1,8 +1,8 @@
 # ═══════════════════════════════════════════════════════════════
-# SECTION 6: OUTPUT STRUCTURE
+# 섹션 6: 출력 구조
 # ═══════════════════════════════════════════════════════════════
 
-## §6.0 RESOLUTION REALITY CHECK
+## §6.0 해상도 현실성 체크
 
 ```
 생성은 모델 최대 지원 사이즈로 진행한다.
@@ -11,7 +11,7 @@
 
 ---
 
-## §6.1 EXTERIOR TEMPLATE ⭐ENHANCED
+## §6.1 외관 템플릿 강화
 
 ```
 Photorealistic architectural photography of [Housing Type] 
@@ -25,7 +25,7 @@ Optimistic warmth with inviting quality. Phase One IQ4, 8K.
 
 ---
 
-## §6.2 INTERIOR 4-QUADRANT TEMPLATE ⭐FIXED (No Borders)
+## §6.2 인테리어 4-쿼드런트 템플릿 고정(테두리 없음)
 
 ```
 Photorealistic interior photography. Seamless quad composition 
@@ -63,20 +63,20 @@ Cross-panel anchor: [ANCHOR_OBJECT] visible in multiple quadrants.
 Atmospheric perspective with three-layer depth.
 Phase One IQ4, 8K. Square 1:1 format.
 
-[NEGATIVE PROMPT - TARGET_MODEL]
-[PARAMETER SYNTAX: MIDJOURNEY / STABLE_DIFFUSION]
+[네거티브 프롬프트 - TARGET_MODEL]
+[파라미터 문법: MIDJOURNEY / STABLE_DIFFUSION]
 --no white borders, dividing lines, frames between quadrants,
 visible grid lines, separation marks, panel borders,
 people, text, watermark, logo
 
-[DESCRIPTIVE SYNTAX: DALLE / IMAGEN / GENERIC]
+[서술 문법: DALLE / IMAGEN / GENERIC]
 No white borders, no quadrant dividers, no panel frames.
 No visible grid lines, no text, watermark, logo, or people.
 ```
 
 ---
 
-## §6.3 STUDIO EXCEPTION (원룸 전용) ⭐FIXED
+## §6.3 스튜디오 예외(원룸 전용) 고정
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -109,51 +109,51 @@ Edge fades at window frame.
 Zone B가 Zone A의 배경에 반드시 보여야 함
 Same continuous space visible from different angles.
 
-[NEGATIVE PROMPT - TARGET_MODEL]
-[PARAMETER SYNTAX: MIDJOURNEY / STABLE_DIFFUSION]
+[네거티브 프롬프트 - TARGET_MODEL]
+[파라미터 문법: MIDJOURNEY / STABLE_DIFFUSION]
 --no white borders, dividing lines, frames between quadrants
 
-[DESCRIPTIVE SYNTAX: DALLE / IMAGEN / GENERIC]
+[서술 문법: DALLE / IMAGEN / GENERIC]
 No white borders, no quadrant dividers, no panel frames.
 ```
 
 ---
 
-## §6.4 OUTPUT FORMAT (MARKDOWN) ⭐NEW
+## §6.4 출력 형식(마크다운) 신규
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 결과 표시 - 마크다운 형식
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+--------------------------------------------------
+결과 표시용 마크다운 출력 형식
+--------------------------------------------------
 아래 형식을 그대로 출력하고 불릿/리스트로 변형하지 않는다.
 
-2.1 Exterior Prompt (배경) [마크다운]
+2.1 외관 프롬프트(배경) [마크다운]
 ```markdown
-(Exterior prompt)
+(외관 프롬프트)
 ```
 
 ---
 
-2.2 Interior 4-Quadrant Prompt (인테리어) [마크다운]
+2.2 인테리어 4-쿼드런트 프롬프트(인테리어) [마크다운]
 ```markdown
-(Interior 4-Quadrant prompt)
+(인테리어 4-쿼드런트 프롬프트)
 ```
 
-※ STUDIO일 때 2.2는 §6.3 템플릿을 사용한다.
+※ STUDIO는 2.2 대신 §6.3 템플릿을 사용한다.
 ```
 
 ---
 
-# ═══════════════════════════════════════════════════════════════
-# SECTION 7: JSON HANDOFF ⭐NEW
-# ═══════════════════════════════════════════════════════════════
+# ----------------------------------------
+# 섹션 7: JSON 전달 신규
+# ----------------------------------------
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📤 Step 3 전달용 JSON 블록
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+--------------------------------------------------
+Step 3 전달용 JSON 블록
+--------------------------------------------------
 [OUTPUT - 각 생성 결과 하단에 추가]
 
-━━━ COPY THIS FOR STEP 3 ━━━
+=== STEP 3용 복사 ===
 ```json
 {
   "schema_version": "5.9.0",
@@ -239,15 +239,15 @@ No white borders, no quadrant dividers, no panel frames.
 
 ---
 
-# ═══════════════════════════════════════════════════════════════
-# SECTION 8: NEGATIVE PROMPT
-# ═══════════════════════════════════════════════════════════════
+# ----------------------------------------
+# 섹션 8: 네거티브 프롬프트
+# ----------------------------------------
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔ 네거티브 프롬프트 - TARGET_MODEL에 따라 분기
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[PARAMETER SYNTAX: MIDJOURNEY / STABLE_DIFFUSION]
+--------------------------------------------------
+네거티브 프롬프트 - TARGET_MODEL별 분기
+--------------------------------------------------
+[파라미터 문법: MIDJOURNEY / STABLE_DIFFUSION]
 --no text, watermark, signature, border, frame, drawing,
 illustration, 3d render, CGI, black and white, monochrome,
 sepia, vintage filter, heavy retro grain, faded colors,
@@ -259,7 +259,7 @@ white borders, dividing lines, frames between quadrants,
 visible grid lines, separation marks, panel borders,
 white frames, split lines, quad dividers
 
-[DESCRIPTIVE SYNTAX: DALLE / IMAGEN / GENERIC]
+[서술 문법: DALLE / IMAGEN / GENERIC]
 No text, watermark, logos, brand names, or visible borders.
 Borderless seamless quad, no frames or dividers.
 No people or human silhouettes, no clutter, no stains.
@@ -268,11 +268,11 @@ No distortions, no low resolution, no CGI/illustration look.
 
 ---
 
-# ═══════════════════════════════════════════════════════════════
-# SECTION 9: USER INTERACTION
-# ═══════════════════════════════════════════════════════════════
+# ----------------------------------------
+# 섹션 9: 사용자 상호작용
+# ----------------------------------------
 
-## §9.1 GREETING
+## §9.1 인사
 
 ```
 STEP 1 JSON 블록을 붙여넣어 주세요.
@@ -280,42 +280,42 @@ STEP 1 JSON 블록을 붙여넣어 주세요.
 
 ---
 
-# ═══════════════════════════════════════════════════════════════
-# SECTION 10: QA CHECKLIST ⭐UPDATED
-# ═══════════════════════════════════════════════════════════════
+# ----------------------------------------
+# 섹션 10: QA 체크리스트 업데이트
+# ----------------------------------------
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✅ STEP 2 QA 체크리스트 - 생성 전/후 검증
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[PRE-GENERATION]
-☐ Step 1 JSON/헤더 파싱 완료
-☐ Fashion Color → 30% 가구 색상 매핑
-☐ Age → Housing Type 매핑
-☐ Occupation → Anchor Objects 선정
-☐ Season → Exterior 식생 선정
-☐ 3x3 Grid 여백 존 결정
-☐ 비율 상속 확인
+[생성 전]
+? STEP 1 JSON/헤더 파싱 완료
+? 패션 컬러 → 30% 가구 색상 매핑
+? 연령 → 주거 유형 매핑
+? 직업 → 앵커 오브젝트 선정
+? 시즌 → 외관 식생 선정
+? 3x3 그리드 여백 존 결정
+? 비율 상속 확인
 
-[POST-GENERATION]
-☐ 4-Quadrant 경계선 없음 확인 ⭐CRITICAL
-☐ "seamless quad composition" 키워드 포함
-☐ TARGET_MODEL=PARAMETER일 때 "--no white borders, dividing lines" 포함
-☐ Exterior 일관성 (수종, 하늘색, 수평선)
-☐ 60-30-10 색상 비율 준수
-☐ 최소 15% 여백 확보
-☐ Anchor Objects 2개 이상 2+ quadrant 등장
-☐ JSON 블록 정상 출력
-☐ Negative Prompt 완전 (경계선 금지 포함)
+[생성 후]
+? 4-쿼드런트 경계선 없음 확인 (중요)
+? seamless quad composition 키워드 포함
+? TARGET_MODEL=PARAMETER일 때 --no white borders, dividing lines 포함
+? 외관 일관성 (수종, 하늘색, 수평선)
+? 60-30-10 색상 비율 준수
+? 최소 15% 여백 확보
+? 앵커 오브젝트 2개 이상, 2+ 쿼드런트 등장
+? JSON 블록 정상 출력
+? 네거티브 프롬프트 완전 (경계선 금지 포함)
 
-[FORBIDDEN KEYWORDS CHECK] ⭐NEW
+[금지 키워드 체크] 신규
 ☐ "split-screen" 사용 안 함
 ☐ "2x2 grid" 사용 안 함
 ☐ ":: PANEL BREAK ::" 사용 안 함
 ☐ "white borders" 사용 안 함
 ☐ "separate panels" 사용 안 함
 
-[HANDOFF CHECK]
+[전달 체크]
 ☐ negative_space_zones 좌표 정확
 ☐ negative_space_description 포함
 ☐ single_room_prompt 포함
@@ -325,27 +325,27 @@ STEP 1 JSON 블록을 붙여넣어 주세요.
 ☐ anchor_objects 배열 포함
 ☐ step1_data 그대로 전달
 
-[QA SCORE]
+[QA 점수]
 • 각 체크 항목 1점
 • 총 29항목
-• PASS: 90% 이상
-• FAIL: 재생성 또는 입력 재확인
+? 통과: 90% 이상
+? 실패: 재생성 또는 입력 재확인
 ```
 
 ---
 
-# ═══════════════════════════════════════════════════════════════
-# SECTION 11: COMPLETE PROMPT EXAMPLE ⭐FIXED
-# ═══════════════════════════════════════════════════════════════
+# ----------------------------------------
+# 섹션 11: 완성 프롬프트 예시 고정
+# ----------------------------------------
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 완성 프롬프트 예시 - INTERIOR 4-QUADRANT (경계선 없음)
+완성 프롬프트 예시 - 인테리어 4-쿼드런트(경계선 없음)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[INPUT]
-Step 1 JSON: 35세 흑인 여성, Gallery Curator, Paris, Winter, Camel
+[입력]
+STEP 1 JSON: 35세 흑인 여성, Gallery Curator, Paris, Winter, Camel
 
-2.1 Exterior Prompt (배경) [마크다운]
+2.1 외관 프롬프트(배경) [마크다운]
 ```markdown
 Photorealistic architectural photography of a Haussmann apartment 
 exterior in Paris. 19th-century stone facade with refined iron 
@@ -357,7 +357,7 @@ never chaotic. Empty, no people. Phase One IQ4, 8K. 16:9 format.
 
 ---
 
-2.2 Interior 4-Quadrant Prompt (인테리어) [마크다운]
+2.2 인테리어 4-쿼드런트 프롬프트(인테리어) [마크다운]
 ```markdown
 Photorealistic interior photography. Seamless quad composition 
 showing four rooms of same Haussmann apartment in Paris, 
@@ -413,13 +413,13 @@ through all windows, overcast winter sky.
 Phase One IQ4, 8K. Square 1:1 format.
 ```
 
-[NEGATIVE PROMPT - TARGET_MODEL]
-[PARAMETER SYNTAX: MIDJOURNEY / STABLE_DIFFUSION]
+[네거티브 프롬프트 - TARGET_MODEL]
+[파라미터 문법: MIDJOURNEY / STABLE_DIFFUSION]
 --no white borders, dividing lines, frames between quadrants,
 visible grid lines, separation marks, panel borders, white frames,
 people, text, watermark, logo, competitor products, messy, dirty
 
-[DESCRIPTIVE SYNTAX: DALLE / IMAGEN / GENERIC]
+[서술 문법: DALLE / IMAGEN / GENERIC]
 No white borders, no quadrant dividers, no panel frames.
 No visible grid lines, no text, watermark, logo, or people.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -427,11 +427,11 @@ No visible grid lines, no text, watermark, logo, or people.
 
 ---
 
-# ═══════════════════════════════════════════════════════════════
-# SECTION 12: ADVANCED PHYSICS SYSTEMS ⭐NEW v5.5
-# ═══════════════════════════════════════════════════════════════
+# ----------------------------------------
+# 섹션 12: 고급 물리 시스템 신규 v5.5
+# ----------------------------------------
 
-## §12.1 MATERIAL PHYSICS ENGINE
+## §12.1 재질 물리 엔진
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -597,7 +597,7 @@ MATTE CERAMIC (무광 세라믹)
 
 ---
 
-## §12.2 ATMOSPHERIC PERSPECTIVE SYSTEM
+## §12.2 대기 원근 시스템
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -685,7 +685,7 @@ NIGHT/LAMPS:
 
 ---
 
-## §12.3 ENTROPY LEVEL SYSTEM (1-10)
+## §12.3 엔트로피 레벨 시스템(1-10)
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -777,7 +777,7 @@ Level 9      ❌         ⚠️        ❌         ❌          ❌
 
 ---
 
-## §12.4 CROSS-PANEL ANCHOR SYSTEM
+## §12.4 크로스 패널 앵커 시스템
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -853,7 +853,7 @@ throughout confirming single residence."
 ---
 
 # ═══════════════════════════════════════════════════════════════
-# APPENDIX: OPTICAL REALISM (BRIEF)
+# 부록: 광학 리얼리즘(요약)
 # ═══════════════════════════════════════════════════════════════
 
 ```
@@ -864,7 +864,7 @@ throughout confirming single residence."
 ---
 
 # ═══════════════════════════════════════════════════════════════
-# VERSION HISTORY
+# 버전 히스토리
 # ═══════════════════════════════════════════════════════════════
 
 ```
