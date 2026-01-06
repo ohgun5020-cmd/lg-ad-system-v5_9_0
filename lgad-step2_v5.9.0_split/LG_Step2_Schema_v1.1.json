@@ -3,13 +3,6 @@
   "$id": "https://example.local/lg2026/schemas/LG_Step2_Schema_v1.1.json",
   "title": "LG Step2 Schema v1.1",
   "type": "object",
-  "required": [
-    "schema_version",
-    "project_id",
-    "step1_data",
-    "step2_data",
-    "room_target"
-  ],
   "properties": {
     "schema_version": {
       "type": "string",
@@ -21,16 +14,6 @@
     },
     "step1_data": {
       "type": "object",
-      "required": [
-        "region",
-        "city",
-        "season",
-        "model_age",
-        "occupation",
-        "fashion_color",
-        "fashion_color_name",
-        "biometric_ids"
-      ],
       "properties": {
         "region": {
           "type": "string",
@@ -69,29 +52,20 @@
           "minItems": 1
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "required": [
+        "region",
+        "city",
+        "season",
+        "model_age",
+        "occupation",
+        "fashion_color",
+        "fashion_color_name",
+        "biometric_ids"
+      ]
     },
     "step2_data": {
       "type": "object",
-      "required": [
-        "housing_type",
-        "interior_style",
-        "room_types",
-        "light_kelvin",
-        "light_direction",
-        "camera_meta",
-        "dominant_palette",
-        "secondary_color",
-        "accent_colors",
-        "negative_space_zones",
-        "negative_space_description",
-        "space_library",
-        "product_space_requirements",
-        "single_room_prompt",
-        "anchor_objects",
-        "exterior_format",
-        "interior_format"
-      ],
       "properties": {
         "housing_type": {
           "type": "string",
@@ -119,17 +93,9 @@
         },
         "camera_meta": {
           "type": "object",
-          "required": ["default"],
           "properties": {
             "default": {
               "type": "object",
-              "required": [
-                "eye_level_cm",
-                "lens_mm_range",
-                "camera_angle",
-                "vanishing_lines",
-                "tilt_correction"
-              ],
               "properties": {
                 "eye_level_cm": {
                   "type": "integer",
@@ -152,19 +118,19 @@
                   "minLength": 2
                 }
               },
-              "additionalProperties": true
+              "additionalProperties": true,
+              "required": [
+                "eye_level_cm",
+                "lens_mm_range",
+                "camera_angle",
+                "vanishing_lines",
+                "tilt_correction"
+              ]
             },
             "overrides": {
               "type": "object",
               "additionalProperties": {
                 "type": "object",
-                "required": [
-                  "eye_level_cm",
-                  "lens_mm_range",
-                  "camera_angle",
-                  "vanishing_lines",
-                  "tilt_correction"
-                ],
                 "properties": {
                   "eye_level_cm": {
                     "type": "integer",
@@ -187,11 +153,19 @@
                     "minLength": 2
                   }
                 },
-                "additionalProperties": true
+                "additionalProperties": true,
+                "required": [
+                  "eye_level_cm",
+                  "lens_mm_range",
+                  "camera_angle",
+                  "vanishing_lines",
+                  "tilt_correction"
+                ]
               }
             }
           },
-          "additionalProperties": true
+          "additionalProperties": true,
+          "required": ["default"]
         },
         "dominant_palette": {
           "type": "array",
@@ -231,15 +205,6 @@
           "type": "object",
           "additionalProperties": {
             "type": "object",
-            "required": [
-              "space_type",
-              "room_type",
-              "tags",
-              "camera_override_key",
-              "negative_space_zone",
-              "negative_space_description",
-              "prompt_snippet"
-            ],
             "properties": {
               "space_type": {
                 "type": "string",
@@ -274,19 +239,22 @@
                 "minLength": 2
               }
             },
-            "additionalProperties": true
+            "additionalProperties": true,
+            "required": [
+              "space_type",
+              "room_type",
+              "tags",
+              "camera_override_key",
+              "negative_space_zone",
+              "negative_space_description",
+              "prompt_snippet"
+            ]
           }
         },
         "product_space_requirements": {
           "type": "object",
           "additionalProperties": {
             "type": "object",
-            "required": [
-              "requires_tags",
-              "preferred_space_types",
-              "avoid_room_types",
-              "fallback_space_types"
-            ],
             "properties": {
               "requires_tags": {
                 "type": "array",
@@ -319,7 +287,13 @@
                 "minItems": 1
               }
             },
-            "additionalProperties": true
+            "additionalProperties": true,
+            "required": [
+              "requires_tags",
+              "preferred_space_types",
+              "avoid_room_types",
+              "fallback_space_types"
+            ]
           }
         },
         "single_room_prompt": {
@@ -343,14 +317,29 @@
           "minLength": 2
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "required": [
+        "housing_type",
+        "interior_style",
+        "room_types",
+        "light_kelvin",
+        "light_direction",
+        "camera_meta",
+        "dominant_palette",
+        "secondary_color",
+        "accent_colors",
+        "negative_space_zones",
+        "negative_space_description",
+        "space_library",
+        "product_space_requirements",
+        "single_room_prompt",
+        "anchor_objects",
+        "exterior_format",
+        "interior_format"
+      ]
     },
     "room_target": {
       "type": "object",
-      "required": [
-        "room_type",
-        "grid_zone"
-      ],
       "properties": {
         "room_type": {
           "type": "string",
@@ -361,15 +350,14 @@
           "minLength": 2
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "required": [
+        "room_type",
+        "grid_zone"
+      ]
     },
     "space_target": {
       "type": "object",
-      "required": [
-        "space_id",
-        "room_type",
-        "grid_zone"
-      ],
       "properties": {
         "space_id": {
           "type": "string",
@@ -384,7 +372,12 @@
           "minLength": 2
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "required": [
+        "space_id",
+        "room_type",
+        "grid_zone"
+      ]
     },
     "space_target_candidates": {
       "type": "array",
@@ -395,5 +388,12 @@
       "minItems": 1
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "project_id",
+    "step1_data",
+    "step2_data",
+    "room_target"
+  ]
 }
