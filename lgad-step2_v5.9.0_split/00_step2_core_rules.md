@@ -235,6 +235,8 @@ TEXTURE: "Fine art print quality with subtle organic film grain"
 • dominant_palette, secondary_color
 • negative_space_zones, anchor_objects
 • camera_meta (렌즈/높이/소실점, default/overrides)
+• space_library, product_space_requirements
+• space_target (선택), space_target_candidates (선택)
 
 IF missing → "필수 정보가 부족합니다: [Missing Fields]"
 

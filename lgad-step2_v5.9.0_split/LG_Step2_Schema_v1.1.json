@@ -85,6 +85,8 @@
         "accent_colors",
         "negative_space_zones",
         "negative_space_description",
+        "space_library",
+        "product_space_requirements",
         "single_room_prompt",
         "anchor_objects",
         "exterior_format",
@@ -225,6 +227,101 @@
             "minLength": 2
           }
         },
+        "space_library": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "space_type",
+              "room_type",
+              "tags",
+              "camera_override_key",
+              "negative_space_zone",
+              "negative_space_description",
+              "prompt_snippet"
+            ],
+            "properties": {
+              "space_type": {
+                "type": "string",
+                "minLength": 2
+              },
+              "room_type": {
+                "type": "string",
+                "minLength": 2
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "minItems": 1
+              },
+              "camera_override_key": {
+                "type": "string",
+                "minLength": 2
+              },
+              "negative_space_zone": {
+                "type": "string",
+                "minLength": 2
+              },
+              "negative_space_description": {
+                "type": "string",
+                "minLength": 2
+              },
+              "prompt_snippet": {
+                "type": "string",
+                "minLength": 2
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "product_space_requirements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "requires_tags",
+              "preferred_space_types",
+              "avoid_room_types",
+              "fallback_space_types"
+            ],
+            "properties": {
+              "requires_tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 2
+                }
+              },
+              "preferred_space_types": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "minItems": 1
+              },
+              "avoid_room_types": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 2
+                }
+              },
+              "fallback_space_types": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        },
         "single_room_prompt": {
           "type": "string",
           "minLength": 2
@@ -265,6 +362,37 @@
         }
       },
       "additionalProperties": true
+    },
+    "space_target": {
+      "type": "object",
+      "required": [
+        "space_id",
+        "room_type",
+        "grid_zone"
+      ],
+      "properties": {
+        "space_id": {
+          "type": "string",
+          "minLength": 2
+        },
+        "room_type": {
+          "type": "string",
+          "minLength": 2
+        },
+        "grid_zone": {
+          "type": "string",
+          "minLength": 2
+        }
+      },
+      "additionalProperties": true
+    },
+    "space_target_candidates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
+      "minItems": 1
     }
   },
   "additionalProperties": true

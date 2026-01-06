@@ -152,6 +152,9 @@ No white borders, no quadrant dividers, no panel frames.
 Step 3 전달용 JSON 블록
 --------------------------------------------------
 [OUTPUT - 각 생성 결과 하단에 추가]
+선택 규칙 요약:
+- room_target만 있을 때: space_library에서 동일 room_type & space_type="FULL_SHOT" 우선
+- 제품 요구 충족 실패 시: product_space_requirements.fallback_space_types 순으로 재탐색
 
 === STEP 3용 복사 ===
 ```json
@@ -225,6 +228,59 @@ Step 3 전달용 JSON 블록
     "negative_space_description": {
       "living": "Center-right wall area kept empty for product placement."
     },
+    "space_library": {
+      "LIVING_FULL_SHOT": {
+        "space_type": "FULL_SHOT",
+        "room_type": "Living",
+        "tags": ["sofa", "full_room"],
+        "camera_override_key": "living",
+        "negative_space_zone": "GRID_3x3_ZONE_5_6",
+        "negative_space_description": "Right wall kept empty for product placement.",
+        "prompt_snippet": "Wide living room view with clear negative wall area."
+      },
+      "LIVING_WORKSPACE": {
+        "space_type": "WORKSPACE",
+        "room_type": "Living",
+        "tags": ["desk", "workspace"],
+        "camera_override_key": "living",
+        "negative_space_zone": "GRID_3x3_ZONE_5_6",
+        "negative_space_description": "Desk zone kept clear for monitor placement.",
+        "prompt_snippet": "Desk-focused living workspace with clean negative space."
+      },
+      "KITCHEN_PREP": {
+        "space_type": "KITCHEN_PREP",
+        "room_type": "Kitchen",
+        "tags": ["countertop"],
+        "camera_override_key": "kitchen",
+        "negative_space_zone": "GRID_3x3_ZONE_4_7",
+        "negative_space_description": "Counter area kept empty for product placement.",
+        "prompt_snippet": "Prep counter focus with clear negative countertop."
+      }
+    },
+    "product_space_requirements": {
+      "Monitor": {
+        "requires_tags": ["desk"],
+        "preferred_space_types": ["WORKSPACE"],
+        "avoid_room_types": ["Kitchen", "Laundry"],
+        "fallback_space_types": ["FULL_SHOT"]
+      },
+      "LG Smart Monitor": {
+        "requires_tags": ["desk"],
+        "preferred_space_types": ["WORKSPACE"],
+        "avoid_room_types": ["Kitchen", "Laundry"],
+        "fallback_space_types": ["FULL_SHOT"]
+      },
+      "TV/Display": {
+        "preferred_space_types": ["FULL_SHOT"],
+        "avoid_room_types": ["Laundry"],
+        "fallback_space_types": ["WORKSPACE"]
+      },
+      "StanbyME": {
+        "preferred_space_types": ["FULL_SHOT"],
+        "avoid_room_types": ["Laundry"],
+        "fallback_space_types": ["WORKSPACE"]
+      }
+    },
     "single_room_prompt": "Single room prompt for room_target with clean negative space.",
     "anchor_objects": ["Brass_floor_lamp", "Persian_rug_edge"],
     "exterior_format": "16:9",
@@ -233,7 +289,13 @@ Step 3 전달용 JSON 블록
   "room_target": {
     "room_type": "living",
     "grid_zone": "GRID_3x3_ZONE_5_6"
-  }
+  },
+  "space_target": {
+    "space_id": "LIVING_WORKSPACE",
+    "room_type": "Living",
+    "grid_zone": "GRID_3x3_ZONE_5_6"
+  },
+  "space_target_candidates": ["LIVING_WORKSPACE", "LIVING_FULL_SHOT", "KITCHEN_PREP"]
 }
 ```
 
@@ -318,6 +380,8 @@ STEP 1 JSON 블록을 붙여넣어 주세요.
 [전달 체크]
 ☐ negative_space_zones 좌표 정확
 ☐ negative_space_description 포함
+☐ space_library 존재 + WORKSPACE 포함(해당 제품군일 때)
+☐ product_space_requirements 존재 + Monitor/Display 매핑 존재
 ☐ single_room_prompt 포함
 ☐ room_target 포함
 ☐ light_kelvin 값 포함
